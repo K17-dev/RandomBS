@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutri-Life - Premium Måltidsboxar & Träningscoaching</title>
+    <link rel="stylesheet" href="setup.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Nutri-Life</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#meals">Måltider</a></li>
+                <li><a href="#training">Träning</a></li>
+                <li><a href="#coaching">Coaching</a></li>
+                <li><a href="#subscription">Prenumerera</a></li>
+            </ul>
+            <div class="cart-container">
+                <button class="cart-btn" onclick="toggleCart()">
+                    Kundvagn (<span id="cart-count">0</span>)
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Förändra ditt liv med Premium nutrition & träning</h2>
+            <p>Färdiga måltidsboxar, personlig träning och expertcoaching - allt från 1,200kr/månad</p>
+            <button class="cta-btn" onclick="scrollToSection('meals')">Starta din resa</button>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&h=400&fit=crop" alt="Hälsosam måltidsförberedelse" />
+        </div>
+    </section>
+
+    <!-- Meal Boxes Section -->
+    <section id="meals" class="meals-section">
+        <h2>Premium Måltidsboxar</h2>
+        <p>Färska, näringsrika och färdiga måltider levererade hem till dig</p>
+        
+        <div class="meal-grid">
+            <div class="meal-card" data-meal-id="1">
+                <img src="https://hungryhealthyhappy.com/wp-content/uploads/2024/05/chicken-protein-bowl-featured.jpg" alt="Protein Power Bowl" />
+                <div class="meal-info">
+                    <h3>Protein Power Bowl</h3>
+                    <p>Grillad kyckling, quinoa, avokado och färska grönsaker</p>
+                    <div class="meal-stats">
+                        <span>520 kcal</span> | <span>35g protein</span>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart(1, 'Protein Power Bowl', 'https://hungryhealthyhappy.com/wp-content/uploads/2024/05/chicken-protein-bowl-featured.jpg')">Lägg i kundvagn</button>
+                </div>
+            </div>
+
+            <div class="meal-card" data-meal-id="2">
+                <img src="https://www.vinia.se/blogg/vin-och-vanner/wp-content/uploads/sites/2/2023/11/Lax.png" alt="Medelhavsdelight" />
+                <div class="meal-info">
+                    <h3>Medelhavsdelight</h3>
+                    <p>Lax, rostade grönsaker och örtkryddad couscous</p>
+                    <div class="meal-stats">
+                        <span>480 kcal</span> | <span>32g protein</span>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart(2, 'Medelhavsdelight', 'https://www.vinia.se/blogg/vin-och-vanner/wp-content/uploads/sites/2/2023/11/Lax.png')">Lägg i kundvagn</button>
+                </div>
+            </div>
+
+            <div class="meal-card" data-meal-id="3">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=300&h=200&fit=crop" alt="Grön Gudinna Sallad" />
+                <div class="meal-info">
+                    <h3>Grön Gudinna Sallad</h3>
+                    <p>Blandsallad, kikärtor, nötter och tahini-dressing</p>
+                    <div class="meal-stats">
+                        <span>380 kcal</span> | <span>18g protein</span>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart(3, 'Grön Gudinna Sallad', 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=300&h=200&fit=crop')">Lägg i kundvagn</button>
+                </div>
+            </div>
+
+            <div class="meal-card" data-meal-id="4">
+                <img src="https://thefirstmess.com/wp-content/uploads/2025/01/crunchy-teriyaki-tofu-air-fryer-02.jpg" alt="Asiatisk Fusion Bowl" />
+                <div class="meal-info">
+                    <h3>Asiatisk Fusion Bowl</h3>
+                    <p>Teriyaki-tofu, brunt ris och ångkokta broccoli</p>
+                    <div class="meal-stats">
+                        <span>450 kcal</span> | <span>22g protein</span>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart(4, 'Asiatisk Fusion Bowl', 'https://thefirstmess.com/wp-content/uploads/2025/01/crunchy-teriyaki-tofu-air-fryer-02.jpg')">Lägg i kundvagn</button>
+                </div>
+            </div>
+
+            <div class="meal-card" data-meal-id="5">
+                <img src="https://i.dietdoctor.com/se/wp-content/2020/11/Italian-turkey-meatballs-with-zoodles-v-scaled.jpg?auto=compress%2Cformat&w=1000&h=1000&fit=crop&rect=0,1024,1433,1408" alt="Italiensk Klassiker" />
+                <div class="meal-info">
+                    <h3>Italiensk Klassiker</h3>
+                    <p> Köttbullar, zucchini-nudlar och marinara</p>
+                    <div class="meal-stats">
+                        <span>410 kcal</span> | <span>28g protein</span>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart(5, 'Italiensk Klassiker', 'https://i.dietdoctor.com/se/wp-content/2020/11/Italian-turkey-meatballs-with-zoodles-v-scaled.jpg?auto=compress%2Cformat&w=1000&h=1000&fit=crop&rect=0,1024,1433,1408')">Lägg i kundvagn</button>
+                </div>
+            </div>
+
+            <div class="meal-card" data-meal-id="6">
+                <img src="https://images.immediate.co.uk/production/volatile/sites/30/2022/10/Pork-carnitas-b94893e.jpg?resize=900%2C471" alt="Mexikansk Fiesta" />
+                <div class="meal-info">
+                    <h3>Mexikansk Fiesta</h3>
+                    <p>Kryddade svarta bönor och kyckling tacos, med sötpotatis och färsk salsa</p>
+                    <div class="meal-stats">
+                        <span>390 kcal</span> | <span>16g protein</span>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart(6, 'Mexikansk Fiesta', 'https://images.immediate.co.uk/production/volatile/sites/30/2022/10/Pork-carnitas-b94893e.jpg?resize=900%2C471')">Lägg i kundvagn</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Section -->
+    <section id="training" class="training-section">
+        <h2>Personliga träningsprogram</h2>
+        <div class="training-content">
+            <div class="training-info">
+                <h3>Expertdesignade träningspass</h3>
+                <p>Våra certifierade tränare skapar personliga träningsplaner anpassade efter din konditionsnivå och mål. Från styrketräning till kondition - vi har allt du behöver.</p>
+                <ul>
+                    <li>✓ Skräddarsydda träningsplaner</li>
+                    <li>✓ Videodemonstration</li>
+                    <li>✓ Progressuppföljning</li>
+                    <li>✓ Alternativ utrustning</li>
+                </ul>
+            </div>
+            <div class="training-image">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=400&fit=crop" alt="Träning" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Coaching Section -->
+    <section id="coaching" class="coaching-section">
+        <h2>1-till-1 näringscoaching</h2>
+        <div class="coaching-content">
+            <div class="coaching-image">
+                <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=500&h=400&fit=crop" alt="Personlig coaching" />
+            </div>
+            <div class="coaching-info">
+                <h3>Din personliga näringsexpert</h3>
+                <p>Arbeta direkt med certifierade nutritionister som förstår dina unika behov och livsstil. Få personlig vägledning för att uppnå varaktiga resultat.</p>
+                <ul>
+                    <li>✓ Veckovisa 1-till-1 sessioner</li>
+                    <li>✓ Personliga måltidsplaner</li>
+                    <li>✓ 24/7 support via app</li>
+                    <li>✓ Regelbundna progressgenomgångar</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscription Section -->
+    <section id="subscription" class="subscription-section">
+        <h2>Välj din prenumeration</h2>
+        <div class="subscription-grid">
+            
+            <!-- Student Subscription -->
+            <div class="subscription-card student">
+                <div class="subscription-badge">Student</div>
+                <h3>Nutri-Life Student</h3>
+                <div class="price">1,200kr<span>/månad</span></div>
+                <ul class="features">
+                    <li>✓ 12 måltidsboxar per vecka</li>
+                    <li>✓ Grundläggande träningsprogram</li>
+                    <li>✓ Gruppcoaching-sessioner</li>
+                    <li>✓ Mobilapp-åtkomst</li>
+                    <li>✓ Progressuppföljning</li>
+                    <li>✓ E-poststöd</li>
+                </ul>
+                <button class="subscribe-btn">Prenumerera Nu</button>
+                <div class="subscription-note">*Kräver giltigt studentbevis</div>
+            </div>
+
+            <!-- Premium Individual Subscription -->
+            <div class="subscription-card premium featured">
+                <div class="subscription-badge popular">Populärast</div>
+                <h3>Nutri-Life Premium</h3>
+                <div class="price">2,400kr<span>/månad</span></div>
+                <ul class="features">
+                    <li>✓ 21 premium måltidsboxar per vecka</li>
+                    <li>✓ Personliga träningsprogram</li>
+                    <li>✓ 1-till-1 näringscoaching</li>
+                    <li>✓ Mobilapp-åtkomst</li>
+                    <li>✓ Progressuppföljning</li>
+                    <li>✓ 24/7 kundsupport</li>
+                    <li>✓ Kostschema-anpassningar</li>
+                </ul>
+                <button class="subscribe-btn">Prenumerera Nu</button>
+            </div>
+
+            <!-- Family Subscription -->
+            <div class="subscription-card family">
+                <div class="subscription-badge">Familj</div>
+                <h3>Nutri-Life Familj</h3>
+                <div class="price">4,800kr<span>/månad</span></div>
+                <ul class="features">
+                    <li>✓ 42 måltidsboxar per vecka (för 2 vuxna)</li>
+                    <li>✓ Barnvänliga måltidsalternativ</li>
+                    <li>✓ 2 personliga träningsprogram</li>
+                    <li>✓ Familjcoaching-sessioner</li>
+                    <li>✓ Delad mobilapp-åtkomst</li>
+                    <li>✓ Familjeprogressuppföljning</li>
+                    <li>✓ Prioriterad kundsupport</li>
+                    <li>✓ Flexibla måltidsanpassningar</li>
+                </ul>
+                <button class="subscribe-btn">Prenumerera Nu</button>
+                <div class="subscription-note">*Perfekt för familjer med 2 vuxna + barn</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Din kundvagn</h3>
+            <button class="close-cart" onclick="toggleCart()">&times;</button>
+        </div>
+        <div class="cart-content">
+            <div id="cart-items"></div>
+            <div class="cart-footer">
+                <button class="order-btn" onclick="placeOrder()">Beställ</button>
+                <button class="clear-cart-btn" onclick="clearCart()">Töm kundvagn</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Confirmation Popup -->
+    <div id="order-popup" class="popup-overlay">
+        <div class="popup-content">
+            <h3>Beställning bekräftad! 🎉</h3>
+            <p>Tack för din beställning! Dina läckra matlådor kommer att förberedas och levereras snart.</p>
+            <button onclick="closeOrderPopup()">Stäng</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Nutri-Life</h4>
+                <p>Förändrar liv genom premium näring och träning.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Kontakt</h4>
+                <p>E-post: info@nutri-life.se</p>
+                <p>Telefon: +46 8 123 456 78</p>
+            </div>
+            <div class="footer-section">
+                <h4>Följ oss</h4>
+                <p>Instagram | Facebook | Twitter</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Nutri-Life. Alla rättigheter förbehållna.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Cart functionality
+        let cart = [];
+        let cartCount = 0;
+
+        function addToCart(id, name, image) {
+            cart.push({ id, name, image });
+            cartCount++;
+            updateCartDisplay();
+            
+            // Add animation to button
+            const button = event.target;
+            button.style.transform = 'scale(0.95)';
+            button.textContent = 'Tillagd!';
+            setTimeout(() => {
+                button.style.transform = 'scale(1)';
+                button.textContent = 'Lägg i kundvagn';
+            }, 500);
+        }
+
+        function updateCartDisplay() {
+            document.getElementById('cart-count').textContent = cartCount;
+            
+            const cartItems = document.getElementById('cart-items');
+            cartItems.innerHTML = '';
+            
+            cart.forEach((item, index) => {
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" />
+                    <div class="cart-item-info">
+                        <h4>${item.name}</h4>
+                        <button onclick="removeFromCart(${index})" class="remove-btn">Ta bort</button>
+                    </div>
+                `;
+                cartItems.appendChild(cartItem);
+            });
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            cartCount--;
+            updateCartDisplay();
+        }
+
+        function clearCart() {
+            cart = [];
+            cartCount = 0;
+            updateCartDisplay();
+        }
+
+        function toggleCart() {
+            const cartSidebar = document.getElementById('cart-sidebar');
+            cartSidebar.classList.toggle('active');
+        }
+
+        function placeOrder() {
+            if (cart.length === 0) {
+                alert('Din kundvagn är tom!');
+                return;
+            }
+            
+            document.getElementById('order-popup').style.display = 'flex';
+            clearCart();
+            toggleCart();
+        }
+
+        function closeOrderPopup() {
+            document.getElementById('order-popup').style.display = 'none';
+        }
+
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        // Close cart when clicking outside
+        document.addEventListener('click', function(event) {
+            const cartSidebar = document.getElementById('cart-sidebar');
+            const cartBtn = document.querySelector('.cart-btn');
+            
+            if (!cartSidebar.contains(event.target) && !cartBtn.contains(event.target)) {
+                cartSidebar.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
